@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suriyawong Jongkhae (Tiger) — Performance Ads Specialist</title>
+<style>
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #F8F8F6;
+  color: #1A1A1A;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── CSS VARIABLES ─── */
+:root {
+  --black: #0D0D0D;
+  --white: #FFFFFF;
+  --cream: #F8F8F6;
+  --gray-1: #F2F2F0;
+  --gray-2: #E8E8E6;
+  --gray-3: #B8B8B6;
+  --gray-4: #888888;
+  --accent: #1A1AFF;
+  --accent-2: #FF3B00;
+  --accent-3: #00C851;
+  --text: #1A1A1A;
+  --text-mid: #444444;
+  --text-muted: #888888;
+}
+
+/* ─── TYPOGRAPHY SCALE ─── */
+.f-80 { font-size: clamp(48px, 6vw, 80px); }
+.f-56 { font-size: clamp(36px, 4.5vw, 56px); }
+.f-40 { font-size: clamp(28px, 3vw, 40px); }
+.f-28 { font-size: clamp(20px, 2.2vw, 28px); }
+.f-18 { font-size: 18px; }
+.f-14 { font-size: 14px; }
+.f-11 { font-size: 11px; }
+.fw-900 { font-weight: 900; }
+.fw-700 { font-weight: 700; }
+.fw-500 { font-weight: 500; }
+.fw-400 { font-weight: 400; }
+.fw-300 { font-weight: 300; }
+.ls-wide { letter-spacing: 0.12em; }
+.ls-tight { letter-spacing: -0.03em; }
+.uppercase { text-transform: uppercase; }
+.italic { font-style: italic; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 56px;
+  background: rgba(248,248,246,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--gray-2);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6%;
+}
+.nav-logo {
+  font-size: 13px; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--black);
+}
+.nav-links {
+  display: flex; gap: 36px; list-style: none;
+}
+.nav-links a {
+  font-size: 12px; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--text-muted);
+  text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--black); }
+.nav-cta {
+  background: var(--black); color: var(--white) !important;
+  padding: 8px 20px; border-radius: 2px; font-size: 11px !important;
+  font-weight: 700 !important;
+}
+.nav-cta:hover { background: var(--accent) !important; color: var(--white) !important; }
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  padding: 0 6%;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  background: var(--black);
+}
+
+.hero-bg-text {
+  position: absolute; right: -2%;
+  font-size: clamp(120px, 18vw, 220px);
+  font-weight: 900; line-height: 1;
+  color: rgba(255,255,255,0.04);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  user-select: none; pointer-events: none;
+  white-space: nowrap;
+}
+
+.hero-grid-line {
+  position: absolute; top: 0; bottom: 0;
+  width: 1px; background: rgba(255,255,255,0.06);
+}
+
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+  padding-top: 56px;
+}
+
+.hero-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 24px;
+}
+.hero-label::before {
+  content: ''; display: block;
+  width: 28px; height: 1px; background: var(--accent);
+}
+
+.hero-name {
+  font-size: clamp(52px, 7vw, 88px);
+  font-weight: 900; line-height: 0.95;
+  letter-spacing: -0.04em; color: var(--white);
+  margin-bottom: 4px;
+}
+.hero-name .accent { color: var(--accent); }
+
+.hero-role {
+  font-size: clamp(14px, 1.5vw, 18px);
+  font-weight: 300; color: rgba(255,255,255,0.5);
+  letter-spacing: 0.04em; margin-bottom: 32px;
+}
+.hero-role strong { color: var(--white); font-weight: 500; }
+
+.hero-tagline {
+  font-size: clamp(22px, 2.8vw, 34px);
+  font-weight: 700; line-height: 1.25;
+  color: var(--white); margin-bottom: 40px;
+  letter-spacing: -0.02em;
+}
+.hero-tagline .line2 { color: rgba(255,255,255,0.45); font-weight: 300; }
+
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-white {
+  background: var(--white); color: var(--black);
+  padding: 14px 32px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none; border: 1px solid var(--white);
+  transition: all 0.2s; display: inline-block;
+}
+.btn-white:hover { background: var(--accent); border-color: var(--accent); color: var(--white); }
+.btn-ghost {
+  background: transparent; color: var(--white);
+  padding: 14px 32px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none; border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.2s; display: inline-block;
+}
+.btn-ghost:hover { border-color: var(--white); }
+
+/* Hero stats card */
+.hero-right { display: flex; flex-direction: column; gap: 16px; }
+
+.hero-stat-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 0;
+}
+.hero-stat-box {
+  background: rgba(255,255,255,0.04);
+  padding: 24px 20px;
+}
+.hero-stat-val {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 900; line-height: 1;
+  letter-spacing: -0.03em; color: var(--white);
+  margin-bottom: 4px;
+}
+.hero-stat-val .unit { font-size: 0.5em; font-weight: 400; color: rgba(255,255,255,0.5); }
+.hero-stat-lbl { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; text-transform: uppercase; }
+
+.platform-row {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.plat-badge {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+}
+.plat-badge.active {
+  background: var(--accent); border-color: var(--accent); color: var(--white);
+}
+
+.hero-avail {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 12px; color: rgba(255,255,255,0.5);
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.avail-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent-3);
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+/* ─── TICKER ─── */
+.ticker-wrap {
+  background: var(--accent); overflow: hidden;
+  padding: 14px 0; white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-flex; animation: ticker 30s linear infinite;
+}
+.ticker-item {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--white);
+  padding: 0 40px;
+}
+.ticker-sep { color: rgba(255,255,255,0.5); }
+@keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* ─── SECTIONS ─── */
+section { padding: 100px 6%; }
+.container { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-muted);
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+}
+.section-label::before {
+  content: ''; width: 24px; height: 1px; background: var(--text-muted);
+}
+
+.section-title {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900; letter-spacing: -0.03em;
+  line-height: 1.05; color: var(--black);
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  font-size: 16px; color: var(--text-muted);
+  line-height: 1.7; max-width: 600px;
+}
+
+/* ─── WHY HIRE ME ─── */
+#why { background: var(--white); }
+
+.why-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; background: var(--gray-2);
+  margin-top: 56px;
+}
+.why-card {
+  background: var(--white); padding: 44px 40px;
+  transition: background 0.25s;
+  position: relative; overflow: hidden;
+}
+.why-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px; background: var(--accent);
+  transform: scaleY(0); transform-origin: bottom;
+  transition: transform 0.3s;
+}
+.why-card:hover::before { transform: scaleY(1); }
+.why-card:hover { background: #FAFAFE; }
+.why-num {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  color: var(--accent); text-transform: uppercase; margin-bottom: 20px;
+}
+.why-title {
+  font-size: 20px; font-weight: 700; letter-spacing: -0.02em;
+  color: var(--black); margin-bottom: 12px;
+}
+.why-body { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+
+/* ─── CASE STUDIES ─── */
+#results { background: var(--cream); }
+
+.result-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: var(--gray-2); margin-top: 56px;
+}
+.result-card {
+  background: var(--white); padding: 40px 36px;
+  display: flex; flex-direction: column;
+}
+.result-industry {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 20px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--gray-2);
+}
+.result-metric {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 8px;
+}
+.metric-before {
+  font-size: 13px; color: var(--text-muted);
+  text-decoration: line-through;
+}
+.metric-after {
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 900; letter-spacing: -0.03em; color: var(--black);
+}
+.metric-unit { font-size: 14px; font-weight: 400; color: var(--text-muted); }
+.metric-label {
+  font-size: 11px; color: var(--text-muted); letter-spacing: 0.06em;
+  text-transform: uppercase; margin-bottom: 24px;
+}
+.result-actions { margin-top: auto; }
+.result-tag {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 4px 12px; background: var(--gray-1);
+  color: var(--text-mid); margin: 3px 3px 0 0;
+}
+
+.result-big {
+  grid-column: 1 / -1; background: var(--black);
+  padding: 56px 48px;
+}
+.result-big .result-industry { color: rgba(255,255,255,0.4); border-color: rgba(255,255,255,0.1); }
+.result-big .result-metric-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: rgba(255,255,255,0.1); margin: 32px 0;
+}
+.result-big .rb-stat { background: rgba(255,255,255,0.04); padding: 24px 20px; }
+.result-big .rb-val {
+  font-size: clamp(28px, 3.5vw, 44px); font-weight: 900;
+  letter-spacing: -0.03em; color: var(--white); margin-bottom: 4px;
+}
+.result-big .rb-val .highlight { color: var(--accent-3); }
+.result-big .rb-lbl { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; text-transform: uppercase; }
+.result-big .result-tag { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+
+/* ─── SKILLS ─── */
+#skills { background: var(--white); }
+
+.skills-layout {
+  display: grid; grid-template-columns: 1fr 1.5fr;
+  gap: 80px; align-items: start; margin-top: 56px;
+}
+.skill-category { margin-bottom: 40px; }
+.skill-cat-title {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-muted);
+  margin-bottom: 16px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--gray-2);
+}
+.skill-bar-wrap { margin-bottom: 14px; }
+.skill-bar-top {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 6px;
+}
+.skill-name { font-size: 13px; font-weight: 500; color: var(--text); }
+.skill-pct { font-size: 12px; font-weight: 700; color: var(--accent); }
+.skill-bar-bg { height: 3px; background: var(--gray-2); border-radius: 0; overflow: hidden; }
+.skill-bar-fill {
+  height: 100%; background: var(--black);
+  border-radius: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+  width: 0;
+}
+.skill-bar-fill.blue { background: var(--accent); }
+.skill-bar-fill.red { background: var(--accent-2); }
+.skill-bar-fill.green { background: var(--accent-3); }
+
+.skill-tags-wrap { display: flex; flex-direction: column; gap: 1px; }
+.skill-tag-row {
+  background: var(--gray-1); padding: 16px 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: background 0.2s;
+}
+.skill-tag-row:hover { background: var(--black); }
+.skill-tag-row:hover .stn { color: var(--white); }
+.skill-tag-row:hover .stl { color: rgba(255,255,255,0.4); }
+.stn { font-size: 14px; font-weight: 500; color: var(--text); transition: color 0.2s; }
+.stl { font-size: 11px; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+
+/* ─── EXPERIENCE ─── */
+#experience { background: var(--cream); }
+.exp-timeline { margin-top: 56px; }
+.exp-item {
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 48px; padding: 40px 0;
+  border-bottom: 1px solid var(--gray-2);
+}
+.exp-item:first-child { border-top: 1px solid var(--gray-2); }
+.exp-left {}
+.exp-period { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+.exp-co { font-size: 13px; color: var(--accent); font-weight: 500; }
+.exp-role { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; color: var(--black); margin-bottom: 12px; }
+.exp-desc { font-size: 14px; color: var(--text-mid); line-height: 1.75; margin-bottom: 16px; }
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.exp-bullets li {
+  font-size: 13px; color: var(--text-mid); display: flex; gap: 12px; line-height: 1.5;
+}
+.exp-bullets li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-weight: 700; }
+
+/* ─── KPI MATCH ─── */
+#kpi { background: var(--black); padding: 80px 6%; }
+.kpi-inner { max-width: 1200px; margin: 0 auto; }
+.kpi-title { font-size: clamp(28px, 3.5vw, 44px); font-weight: 900; letter-spacing: -0.03em; color: var(--white); margin-bottom: 8px; }
+.kpi-sub { font-size: 16px; color: rgba(255,255,255,0.4); margin-bottom: 56px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.1); }
+.kpi-card {
+  background: rgba(255,255,255,0.04); padding: 36px 32px;
+  transition: background 0.2s;
+}
+.kpi-card:hover { background: rgba(255,255,255,0.08); }
+.kpi-icon { font-size: 24px; margin-bottom: 16px; }
+.kpi-metric { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
+.kpi-val { font-size: clamp(20px, 2.5vw, 28px); font-weight: 900; color: var(--white); letter-spacing: -0.02em; margin-bottom: 8px; }
+.kpi-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+
+/* ─── TOOLS ─── */
+#tools { background: var(--white); }
+.tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--gray-2); margin-top: 56px; }
+.tool-card {
+  background: var(--white); padding: 32px 28px;
+  transition: background 0.2s, transform 0.2s;
+}
+.tool-card:hover { background: var(--black); }
+.tool-card:hover .tool-name { color: var(--white); }
+.tool-card:hover .tool-cat { color: rgba(255,255,255,0.4); }
+.tool-name { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 4px; transition: color 0.2s; }
+.tool-cat { font-size: 11px; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+
+/* ─── CONTACT ─── */
+#contact { background: var(--accent); padding: 100px 6%; }
+.contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.contact-title { font-size: clamp(36px, 4.5vw, 60px); font-weight: 900; letter-spacing: -0.03em; color: var(--white); line-height: 1.05; margin-bottom: 20px; }
+.contact-sub { font-size: 16px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 36px; }
+.contact-links { display: flex; flex-direction: column; gap: 2px; }
+.contact-link {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 20px; background: rgba(255,255,255,0.12);
+  text-decoration: none; transition: background 0.2s;
+}
+.contact-link:hover { background: rgba(255,255,255,0.22); }
+.cl-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+.cl-value { font-size: 14px; font-weight: 500; color: var(--white); }
+.cl-arrow { color: rgba(255,255,255,0.6); font-size: 18px; }
+
+.contact-cta-box {
+  background: var(--white); padding: 48px 44px;
+}
+.cta-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.cta-title { font-size: 26px; font-weight: 900; letter-spacing: -0.02em; color: var(--black); margin-bottom: 12px; }
+.cta-sub { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 28px; }
+.btn-black {
+  background: var(--black); color: var(--white);
+  padding: 16px 32px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none; display: inline-block;
+  transition: all 0.2s;
+}
+.btn-black:hover { background: var(--accent); }
+.cta-items { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+.cta-item { font-size: 13px; color: var(--text-mid); display: flex; gap: 10px; }
+.cta-item::before { content: '✓'; color: var(--accent-3); font-weight: 700; flex-shrink: 0; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--black); padding: 24px 6%;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.foot-name { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); }
+.foot-copy { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+/* ─── SCROLL REVEAL ─── */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+
+/* ─── RESPONSIVE ─── */
+/* ─── RESPONSIVE — TABLET (768px – 1024px) ─── */
+@media (max-width: 1024px) and (min-width: 769px) {
+  nav { padding: 0 4%; }
+  .nav-logo { font-size: 11px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 11px; }
+
+  section { padding: 80px 4%; }
+  #kpi { padding: 80px 4%; }
+  #contact { padding: 80px 4%; }
+
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; padding-top: 20px; }
+  .hero-bg-text { font-size: 130px; top: 50%; transform: translateY(-50%); opacity: 0.5; }
+  .hero-right { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .hero-stat-row { max-width: 100%; }
+  .hero-avail { grid-column: 1 / -1; }
+  .platform-row { grid-column: 1 / -1; margin-top: 0 !important; }
+
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .why-card { padding: 32px 28px; }
+
+  .result-grid { grid-template-columns: 1fr 1fr; }
+  .result-big { grid-column: 1 / -1; }
+  .result-big .result-metric-grid { grid-template-columns: repeat(2, 1fr); }
+  .result-big { padding: 40px 36px; }
+
+  .skills-layout { grid-template-columns: 1fr; gap: 40px; }
+
+  .exp-item { grid-template-columns: 160px 1fr; gap: 32px; }
+
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+
+  .tools-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+  .contact-cta-box { padding: 36px 32px; }
+}
+
+/* ─── RESPONSIVE — MOBILE (≤768px) ─── */
+@media (max-width: 768px) {
+  nav { padding: 0 5%; }
+  .nav-logo { font-size: 11px; max-width: 200px; line-height: 1.3; }
+  .nav-links { display: none; }
+
+  section { padding: 64px 5%; }
+  #kpi { padding: 64px 5%; }
+  #contact { padding: 64px 5%; }
+
+  #hero { padding: 0 5%; min-height: auto; padding-top: 80px; padding-bottom: 60px; }
+  .hero-bg-text { display: none; }
+  .hero-grid-line { display: none; }
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; padding-top: 0; }
+  .hero-name { font-size: clamp(42px, 12vw, 64px); }
+  .hero-role { font-size: 13px; }
+  .hero-tagline { font-size: clamp(18px, 5vw, 26px); }
+  .hero-btns { flex-direction: column; gap: 10px; }
+  .btn-white, .btn-ghost { text-align: center; padding: 14px 24px; font-size: 12px; }
+
+  .hero-right { display: flex; flex-direction: column; gap: 12px; }
+  .hero-stat-row { grid-template-columns: 1fr 1fr; }
+  .hero-stat-box { padding: 18px 14px; }
+  .hero-stat-val { font-size: clamp(22px, 7vw, 32px); }
+  .hero-stat-lbl { font-size: 10px; }
+  .platform-row { gap: 6px; }
+  .plat-badge { font-size: 9px; padding: 5px 10px; }
+
+  .ticker-item { font-size: 10px; padding: 0 24px; }
+
+  .section-title { font-size: clamp(26px, 8vw, 36px); }
+  .section-sub { font-size: 14px; }
+  .section-label { font-size: 10px; }
+
+  .why-grid { grid-template-columns: 1fr; gap: 2px; }
+  .why-card { padding: 28px 24px; }
+  .why-title { font-size: 17px; }
+  .why-body { font-size: 13px; }
+
+  .result-grid { grid-template-columns: 1fr; gap: 2px; }
+  .result-big { grid-column: 1; padding: 32px 24px; }
+  .result-big .result-metric-grid { grid-template-columns: 1fr 1fr; gap: 1px; margin: 20px 0; }
+  .result-big .rb-val { font-size: clamp(22px, 7vw, 32px); }
+  .result-card { padding: 28px 24px; }
+  .metric-after { font-size: clamp(22px, 7vw, 30px); }
+
+  .skills-layout { grid-template-columns: 1fr; gap: 32px; }
+
+  .exp-item { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+  .exp-role { font-size: 17px; }
+  .exp-desc { font-size: 13px; }
+  .exp-bullets li { font-size: 12px; }
+
+  .kpi-grid { grid-template-columns: 1fr; gap: 2px; }
+  .kpi-card { padding: 28px 24px; }
+  .kpi-val { font-size: clamp(18px, 5vw, 24px); }
+  .kpi-title { font-size: clamp(24px, 7vw, 36px); }
+
+  .tools-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+  .tool-card { padding: 22px 18px; }
+  .tool-name { font-size: 13px; }
+
+  .contact-inner { grid-template-columns: 1fr; gap: 32px; }
+  .contact-title { font-size: clamp(28px, 8vw, 44px); }
+  .contact-sub { font-size: 14px; }
+  .contact-cta-box { padding: 28px 24px; }
+  .cta-title { font-size: 20px; }
+  .cta-sub { font-size: 13px; }
+  .btn-black { display: block; text-align: center; padding: 16px 24px; }
+  .cl-label { font-size: 10px; }
+  .cl-value { font-size: 13px; }
+
+  footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 5%; }
+  .foot-name { font-size: 10px; }
+  .foot-copy { font-size: 10px; }
+}
+
+/* ─── RESPONSIVE — SMALL MOBILE (≤480px) ─── */
+@media (max-width: 480px) {
+  .hero-stat-row { grid-template-columns: 1fr 1fr; }
+  .result-big .result-metric-grid { grid-template-columns: 1fr 1fr; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .contact-link { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .cl-arrow { display: none; }
+  .why-grid { gap: 2px; }
+  .skill-tag-row { flex-direction: column; align-items: flex-start; gap: 2px; }
+}
+
+/* ─── RESPONSIVE — DESKTOP LARGE (≥1440px) ─── */
+@media (min-width: 1440px) {
+  nav { padding: 0 8%; }
+  section { padding: 120px 8%; }
+  #kpi { padding: 100px 8%; }
+  #contact { padding: 120px 8%; }
+  .container { max-width: 1300px; }
+  .kpi-inner { max-width: 1300px; }
+  .contact-inner { max-width: 1300px; }
+  .hero-inner { max-width: 1300px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-logo">Suriyawong Jongkhae (Tiger) — Performance Ads</div>
+  <ul class="nav-links">
+    <li><a href="#why">Why Me</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-bg-text">ADS</div>
+  <div class="hero-grid-line" style="left:33%"></div>
+  <div class="hero-grid-line" style="left:66%"></div>
+
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-label reveal">Performance Ads Specialist</div>
+      <h1 class="hero-name reveal reveal-d1">
+        Suriyawong<br>
+        <span class="accent">Jongkhae</span> (Tiger)
+      </h1>
+      <p class="hero-role reveal reveal-d2">
+        <strong>3+ Years Agency Level</strong> · Chiang Mai, Thailand
+      </p>
+      <p class="hero-tagline reveal reveal-d3">
+        I don't just run ads.<br>
+        <span class="line2">I build systems that convert.</span>
+      </p>
+      <div class="hero-btns reveal reveal-d4">
+        <a href="#contact" class="btn-white">Hire Me Now</a>
+        <a href="#results" class="btn-ghost">See Results →</a>
+      </div>
+    </div>
+
+    <div class="hero-right reveal reveal-d2">
+      <div class="hero-stat-row">
+        <div class="hero-stat-box">
+          <div class="hero-stat-val">500<span class="unit">K฿</span></div>
+          <div class="hero-stat-lbl">Ad Budget / Month</div>
+        </div>
+        <div class="hero-stat-box">
+          <div class="hero-stat-val">3<span class="unit">+ yrs</span></div>
+          <div class="hero-stat-lbl">Agency Experience</div>
+        </div>
+        <div class="hero-stat-box">
+          <div class="hero-stat-val">7<span class="unit">+</span></div>
+          <div class="hero-stat-lbl">Industries</div>
+        </div>
+        <div class="hero-stat-box">
+          <div class="hero-stat-val">10<span class="unit">+</span></div>
+          <div class="hero-stat-lbl">Active Brands</div>
+        </div>
+      </div>
+
+      <div class="platform-row" style="margin-top:8px">
+        <span class="plat-badge active">Meta Ads</span>
+        <span class="plat-badge active">Google Ads</span>
+        <span class="plat-badge active">TikTok Ads</span>
+        <span class="plat-badge">Shopee Ads</span>
+        <span class="plat-badge">Lazada Ads</span>
+        <span class="plat-badge">CAPI</span>
+        <span class="plat-badge">GTM</span>
+        <span class="plat-badge">GA4</span>
+      </div>
+
+      <div class="hero-avail">
+        <div class="avail-dot"></div>
+        <span>Available for new positions — Immediate start</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TICKER ─── -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-item">Meta Ads Manager <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Google Ads <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">TikTok Ads <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Full-Funnel Strategy <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Lead Generation <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">ROAS Optimization <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">CPL Reduction <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Conversion API <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">A/B Testing <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Creative Briefing <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">E-Commerce Ads <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Shopee Ads <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Meta Ads Manager <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Google Ads <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">TikTok Ads <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Full-Funnel Strategy <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Lead Generation <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">ROAS Optimization <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">CPL Reduction <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Conversion API <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">A/B Testing <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Creative Briefing <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">E-Commerce Ads <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Shopee Ads <span class="ticker-sep">·</span></span>
+  </div>
+</div>
+
+<!-- ─── WHY HIRE ME ─── -->
+<section id="why">
+  <div class="container">
+    <div class="section-label reveal">Why Hire Me</div>
+    <h2 class="section-title reveal reveal-d1">What separates me<br>from other candidates</h2>
+    <p class="section-sub reveal reveal-d2">I come from an agency environment where I'm accountable for real budgets, real results, and real clients — every single month.</p>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-num">01 — Strategic Thinking</div>
+        <div class="why-title">I understand the full business, not just the ad account</div>
+        <div class="why-body">I translate business objectives into campaign direction, funnel architecture, content brief, and optimization plans. I don't just set up campaigns — I build systems that align with revenue goals. From TOF awareness to BOF conversion, every element is intentional.</div>
+      </div>
+      <div class="why-card reveal reveal-d1">
+        <div class="why-num">02 — Hands-On Execution</div>
+        <div class="why-title">Real experience managing 300K–500K THB/month</div>
+        <div class="why-body">Not a course graduate — I manage real ad spend for real brands simultaneously at an agency. I handle daily optimization, budget reallocation, bidding strategy, and crisis response. I've operated at scale and I'm comfortable making data-driven decisions under pressure.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-num">03 — Data → Decision</div>
+        <div class="why-title">I read numbers and turn them into clear next actions</div>
+        <div class="why-body">CPL, CPA, ROAS, CTR, CVR, Hook Rate, Frequency — I monitor these daily. But more importantly, I know which metric matters for which objective, and I can explain findings to both the marketing team and non-technical stakeholders in plain language.</div>
+      </div>
+      <div class="why-card reveal reveal-d1">
+        <div class="why-num">04 — Multi-Industry Expertise</div>
+        <div class="why-title">Deep experience in your highest-value verticals</div>
+        <div class="why-body">Aesthetic Clinics (Botox, Filler, Laser, HIFU lead gen), International Schools, Real Estate, Skincare & Beauty E-Commerce, FMCG, OEM/ODM, and Hospitality. Each industry has a different buyer journey — I understand the nuance of each and execute accordingly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RESULTS / CASE STUDIES ─── -->
+<section id="results">
+  <div class="container">
+    <div class="section-label reveal">Proven Results</div>
+    <h2 class="section-title reveal reveal-d1">Real numbers.<br>Real campaigns.</h2>
+    <p class="section-sub reveal reveal-d2">Results achieved for actual clients. Not estimates. Not projections.</p>
+
+    <div class="result-grid">
+
+      <!-- Big featured result -->
+      <div class="result-big reveal">
+        <div class="result-industry">Aesthetic Clinic · Lead Generation · Meta Ads</div>
+        <div class="result-metric-grid">
+          <div class="rb-stat">
+            <div class="rb-val"><span class="highlight">447฿</span></div>
+            <div class="rb-lbl">Cost Per Lead (after)</div>
+          </div>
+          <div class="rb-stat">
+            <div class="rb-val">2,500฿</div>
+            <div class="rb-lbl">CPL Before (same budget)</div>
+          </div>
+          <div class="rb-stat">
+            <div class="rb-val"><span class="highlight">89</span></div>
+            <div class="rb-lbl">Leads (Month 3)</div>
+          </div>
+          <div class="rb-stat">
+            <div class="rb-val">80K฿</div>
+            <div class="rb-lbl">Ad Spend (same budget)</div>
+          </div>
+        </div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.5);line-height:1.7;max-width:700px;margin-bottom:20px;">
+          Rebuilt entire pixel infrastructure, separated TOF/MOF/BOF campaigns, implemented 7-layer audience segmentation, launched Retargeting Sequence (Day 1/3/7/14), and ran DCO creative testing. CPL dropped 82% in 90 days.
+        </div>
+        <span class="result-tag">Pixel + CAPI Setup</span>
+        <span class="result-tag">Audience Architecture</span>
+        <span class="result-tag">Full-Funnel</span>
+        <span class="result-tag">Retargeting</span>
+        <span class="result-tag">A/B Testing</span>
+      </div>
+
+      <div class="result-card reveal">
+        <div class="result-industry">International School · Lead Gen · Meta + Google</div>
+        <div class="result-metric">
+          <div>
+            <div class="metric-before">160 leads KPI</div>
+            <div class="metric-after">6,600<span class="metric-unit">+ leads</span></div>
+          </div>
+        </div>
+        <div class="metric-label">Total Leads Generated</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:20px;">
+          41× over the KPI target. Multi-platform campaign across Meta and Google with Facebook Instant Form + GTM tracking. Generated qualified leads for school enrollment across 3 campuses.
+        </div>
+        <div class="result-actions">
+          <span class="result-tag">Meta Ads</span>
+          <span class="result-tag">Google Ads</span>
+          <span class="result-tag">Instant Form</span>
+          <span class="result-tag">GTM</span>
+        </div>
+      </div>
+
+      <div class="result-card reveal reveal-d1">
+        <div class="result-industry">Real Estate · Anti-Spam Rebuild · Meta Ads</div>
+        <div class="result-metric">
+          <div>
+            <div class="metric-before">100% spam leads before</div>
+            <div class="metric-after">Real<span class="metric-unit"> qualified leads</span></div>
+          </div>
+        </div>
+        <div class="metric-label">Lead Quality Transformed</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:20px;">
+          Complete campaign restructure to eliminate spam. Rebuilt audience targeting for Thai & Foreign Investor segments. Implemented Messenger chatbot for qualification. Conversion tracking via Pixel + Google Display added.
+        </div>
+        <div class="result-actions">
+          <span class="result-tag">Lead Quality</span>
+          <span class="result-tag">Audience Rebuild</span>
+          <span class="result-tag">Chatbot</span>
+          <span class="result-tag">Google Display</span>
+        </div>
+      </div>
+
+      <div class="result-card reveal">
+        <div class="result-industry">E-Commerce · Skincare · Multi-Platform</div>
+        <div class="result-metric">
+          <div>
+            <div class="metric-after">4<span class="metric-unit"> platforms</span></div>
+          </div>
+        </div>
+        <div class="metric-label">Simultaneous Platform Management</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:20px;">
+          Managed Meta Ads, TikTok Ads, Shopee Ads, and Lazada Ads simultaneously for beauty brands. Coordinated Campaign Calendar for Double Date, Payday, and Mega Campaign events. Monthly GMV optimization.
+        </div>
+        <div class="result-actions">
+          <span class="result-tag">Shopee Ads</span>
+          <span class="result-tag">Lazada Ads</span>
+          <span class="result-tag">TikTok Shop</span>
+          <span class="result-tag">GMV Max</span>
+        </div>
+      </div>
+
+      <div class="result-card reveal reveal-d1">
+        <div class="result-industry">Hospitality · The Royal Shilton Resort · Full Digital</div>
+        <div class="result-metric">
+          <div>
+            <div class="metric-after">Full<span class="metric-unit"> stack built</span></div>
+          </div>
+        </div>
+        <div class="metric-label">From Zero Digital Presence</div>
+        <div style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:20px;">
+          Built complete digital marketing infrastructure: website, Google Business Profile, OTA channel management, Revenue Dashboard, and paid campaigns. Co-owner perspective gives direct business accountability.
+        </div>
+        <div class="result-actions">
+          <span class="result-tag">Direct Booking Ads</span>
+          <span class="result-tag">OTA Strategy</span>
+          <span class="result-tag">Revenue Tracking</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── KPI MATCH ─── -->
+<div id="kpi">
+  <div class="kpi-inner">
+    <div class="section-label reveal" style="color:rgba(255,255,255,0.4)">KPI Readiness</div>
+    <h2 class="kpi-title reveal reveal-d1">I've been measured<br>on these KPIs. Every month.</h2>
+    <p class="kpi-sub reveal reveal-d2">These are not theoretical — they are the metrics I report on for every client, every 30 days.</p>
+
+    <div class="kpi-grid">
+      <div class="kpi-card reveal">
+        <div class="kpi-icon">📉</div>
+        <div class="kpi-metric">Primary KPI</div>
+        <div class="kpi-val">CPL / CPA</div>
+        <div class="kpi-desc">Cost Per Lead and Cost Per Acquisition are the primary metrics I optimize toward. I have a systematic approach to reducing CPL through audience segmentation, creative testing, and funnel optimization.</div>
+      </div>
+      <div class="kpi-card reveal reveal-d1">
+        <div class="kpi-icon">📈</div>
+        <div class="kpi-metric">Revenue KPI</div>
+        <div class="kpi-val">ROAS / GMV</div>
+        <div class="kpi-desc">For E-commerce clients, ROAS and GMV are the ultimate measures. I optimize Shopee, Lazada and TikTok campaigns to maximize Return on Ad Spend while maintaining budget efficiency.</div>
+      </div>
+      <div class="kpi-card reveal reveal-d2">
+        <div class="kpi-icon">🎯</div>
+        <div class="kpi-metric">Quality KPI</div>
+        <div class="kpi-val">Lead Quality</div>
+        <div class="kpi-desc">Quantity of leads means nothing without quality. I implement qualification layers, audience intent signals, and post-click tracking to ensure leads reaching the sales team are genuinely convertible.</div>
+      </div>
+      <div class="kpi-card reveal">
+        <div class="kpi-icon">⚡</div>
+        <div class="kpi-metric">Efficiency KPI</div>
+        <div class="kpi-val">CTR / CVR</div>
+        <div class="kpi-desc">Click-Through Rate and Conversion Rate signal the health of creative and landing page alignment. I run systematic A/B tests to improve both metrics across all platforms continuously.</div>
+      </div>
+      <div class="kpi-card reveal reveal-d1">
+        <div class="kpi-icon">🔬</div>
+        <div class="kpi-metric">Testing KPI</div>
+        <div class="kpi-val">Test Velocity</div>
+        <div class="kpi-desc">Running more quality tests per week means faster learning. I maintain a structured testing framework: one variable at a time, statistically valid samples, clear winners scaled and losers cut immediately.</div>
+      </div>
+      <div class="kpi-card reveal reveal-d2">
+        <div class="kpi-icon">📋</div>
+        <div class="kpi-metric">Insight KPI</div>
+        <div class="kpi-val">Report Quality</div>
+        <div class="kpi-desc">Reports aren't just numbers — they're decisions. Every report I deliver includes current performance, root cause analysis, and a clear action plan for the next period. No data dumps without direction.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SKILLS ─── -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label reveal">Technical Skills</div>
+    <h2 class="section-title reveal reveal-d1">Skill depth<br>across every tool</h2>
+
+    <div class="skills-layout">
+      <div>
+        <div class="skill-category">
+          <div class="skill-cat-title">Paid Advertising</div>
+          <div class="skill-bar-wrap reveal">
+            <div class="skill-bar-top"><span class="skill-name">Meta Ads Manager</span><span class="skill-pct">98%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill blue" data-width="98"></div></div>
+          </div>
+          <div class="skill-bar-wrap reveal">
+            <div class="skill-bar-top"><span class="skill-name">Google Ads (Search + PMax)</span><span class="skill-pct">88%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill blue" data-width="88"></div></div>
+          </div>
+          <div class="skill-bar-wrap reveal">
+            <div class="skill-bar-top"><span class="skill-name">TikTok Ads Manager</span><span class="skill-pct">85%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill blue" data-width="85"></div></div>
+          </div>
+          <div class="skill-bar-wrap reveal">
+            <div class="skill-bar-top"><span class="skill-name">Shopee Ads / Lazada Ads</span><span class="skill-pct">80%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill blue" data-width="80"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">Tracking & Data</div>
+          <div class="skill-bar-wrap reveal">
+            <div class="skill-bar-top"><span class="skill-name">Meta Pixel + Conversion API</span><span class="skill-pct">98%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill red" data-width="98"></div></div>
+          </div>
+          <div class="skill-bar-wrap reveal">
+            <div class="skill-bar-top"><span class="skill-name">Google Tag Manager (GTM)</span><span class="skill-pct">95%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill red" data-width="95"></div></div>
+          </div>
+          <div class="skill-bar-wrap reveal">
+            <div class="skill-bar-top"><span class="skill-name">GA4 + Looker Studio</span><span class="skill-pct">90%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill red" data-width="90"></div></div>
+          </div>
+          <div class="skill-bar-wrap reveal">
+            <div class="skill-bar-top"><span class="skill-name">UTM Architecture</span><span class="skill-pct">92%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill red" data-width="92"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">Strategy & Operations</div>
+          <div class="skill-bar-wrap reveal">
+            <div class="skill-bar-top"><span class="skill-name">Full-Funnel Strategy</span><span class="skill-pct">95%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill green" data-width="95"></div></div>
+          </div>
+          <div class="skill-bar-wrap reveal">
+            <div class="skill-bar-top"><span class="skill-name">Creative Briefing</span><span class="skill-pct">90%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill green" data-width="90"></div></div>
+          </div>
+          <div class="skill-bar-wrap reveal">
+            <div class="skill-bar-top"><span class="skill-name">Budget Allocation & Control</span><span class="skill-pct">93%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill green" data-width="93"></div></div>
+          </div>
+          <div class="skill-bar-wrap reveal">
+            <div class="skill-bar-top"><span class="skill-name">A/B Testing Framework</span><span class="skill-pct">92%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill green" data-width="92"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-tags-wrap">
+        <div class="skill-tag-row reveal">
+          <span class="stn">Campaign Architecture (TOF / MOF / BOF)</span>
+          <span class="stl">Expert</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">Audience Segmentation & Lookalike</span>
+          <span class="stl">Expert</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">Retargeting Sequence (Multi-Touch)</span>
+          <span class="stl">Expert</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">Dynamic Creative Optimization (DCO)</span>
+          <span class="stl">Advanced</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">Bid Strategy (CBO / ABO / Smart Bidding)</span>
+          <span class="stl">Expert</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">Lead Generation & Qualification</span>
+          <span class="stl">Expert</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">E-Commerce GMV Optimization</span>
+          <span class="stl">Advanced</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">Shopee / Lazada Algorithm</span>
+          <span class="stl">Advanced</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">TikTok GMV Max / Shop Ads</span>
+          <span class="stl">Advanced</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">Monthly Performance Reporting</span>
+          <span class="stl">Expert</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">CRM Lead Sheet (Google Sheets / Real-time)</span>
+          <span class="stl">Expert</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">Clinic / Aesthetic Marketing (Policy-sensitive)</span>
+          <span class="stl">Specialist</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">Education / School Lead Generation</span>
+          <span class="stl">Specialist</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">Real Estate Multi-segment Targeting</span>
+          <span class="stl">Advanced</span>
+        </div>
+        <div class="skill-tag-row reveal">
+          <span class="stn">AI Tools (Claude) for Workflow</span>
+          <span class="stl">Daily User</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─── -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label reveal">Experience</div>
+    <h2 class="section-title reveal reveal-d1">Where the skills<br>were built</h2>
+
+    <div class="exp-timeline">
+      <div class="exp-item reveal">
+        <div class="exp-left">
+          <div class="exp-period">2025 — Present</div>
+          <div class="exp-co">The Details Company</div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Touchpoint & Media Strategy Specialist</div>
+          <div class="exp-desc">Agency-level performance marketing specialist managing paid advertising campaigns for multiple brands simultaneously across Meta, Google, TikTok, and E-Commerce platforms. Responsible for full campaign lifecycle from strategy to optimization to reporting.</div>
+          <ul class="exp-bullets">
+            <li>Managed 300K–500K THB/month in combined ad budgets across 10+ brand accounts simultaneously</li>
+            <li>Built and maintained Pixel + CAPI + GTM tracking infrastructure for every client account</li>
+            <li>Developed Full-Funnel campaign structures (TOF/MOF/BOF) tailored to each industry's buyer journey</li>
+            <li>Delivered monthly performance reports with data-driven insights and clear next-period action plans</li>
+            <li>Wrote creative briefs for graphic and content teams based on ad performance data — not assumptions</li>
+            <li>Implemented A/B testing frameworks to continuously improve CPL, ROAS, CTR, and CVR</li>
+            <li>Specialized in policy-sensitive industries: aesthetic clinics, international schools, real estate</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-left">
+          <div class="exp-period">2025 — Present</div>
+          <div class="exp-co">The Royal Shilton Resort</div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Digital Marketing Manager & Co-owner</div>
+          <div class="exp-desc">Co-owner responsible for all digital marketing operations for a boutique hotel in Chiang Mai's Old City. This role provides a business-owner perspective that directly informs my approach to performance marketing — every baht must justify itself.</div>
+          <ul class="exp-bullets">
+            <li>Built complete digital presence from zero: website, Google Business Profile, social media, OTA management</li>
+            <li>Managed direct booking campaigns via Meta Ads with Pixel-based conversion tracking</li>
+            <li>Developed Revenue Dashboard to monitor OTA performance, occupancy, and channel profitability</li>
+            <li>Experience with hospitality marketing across Thai, English, and Chinese-speaking audiences</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-left">
+          <div class="exp-period">Education</div>
+          <div class="exp-co">Mae Fah Luang University</div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Bachelor of Business Administration (BBA)</div>
+          <div class="exp-desc">Business Administration degree with focus on marketing strategy and consumer behavior. Supplemented with professional certifications in digital advertising.</div>
+          <ul class="exp-bullets">
+            <li>Meta Digital Marketing Associate Certified</li>
+            <li>Google Ads Search Certified</li>
+            <li>Google Analytics 4 (GA4) Certified</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TOOLS ─── -->
+<section id="tools" style="padding-top:0">
+  <div class="container">
+    <div class="section-label reveal">Tech Stack</div>
+    <h2 class="section-title reveal reveal-d1">Tools I use daily</h2>
+
+    <div class="tools-grid">
+      <div class="tool-card reveal">
+        <div class="tool-name">Meta Ads Manager</div>
+        <div class="tool-cat">Paid Social</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-name">Google Ads</div>
+        <div class="tool-cat">Search + PMax + Display</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-name">TikTok Ads Manager</div>
+        <div class="tool-cat">Paid Social + Shop</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-name">Shopee / Lazada Ads</div>
+        <div class="tool-cat">E-Commerce Marketplace</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-name">Meta Pixel + CAPI</div>
+        <div class="tool-cat">Conversion Tracking</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-name">Google Tag Manager</div>
+        <div class="tool-cat">Tag Management</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-name">GA4 + Looker Studio</div>
+        <div class="tool-cat">Analytics + Reporting</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-name">Google Sheets / CRM</div>
+        <div class="tool-cat">Lead Management</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-name">Facebook Business Suite</div>
+        <div class="tool-cat">Page Management</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-name">Claude AI</div>
+        <div class="tool-cat">AI Workflow Tool</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-name">Canva / Figma</div>
+        <div class="tool-cat">Creative Briefing</div>
+      </div>
+      <div class="tool-card reveal">
+        <div class="tool-name">LINE OA Manager</div>
+        <div class="tool-cat">CRM + Broadcast</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<div id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-label reveal" style="color:rgba(255,255,255,0.5)">Get In Touch</div>
+      <h2 class="contact-title reveal reveal-d1">Let's talk<br>about results.</h2>
+      <p class="contact-sub reveal reveal-d2">I'm currently open to Performance Ads Specialist roles — full-time or contract, remote or on-site. If you need someone who can run ads, read data, and drive real business outcomes, let's talk.</p>
+
+      <div class="contact-links reveal reveal-d3">
+        <a href="tel:0931492935" class="contact-link">
+          <span class="cl-label">Phone</span>
+          <span class="cl-value">093-149-2935</span>
+          <span class="cl-arrow">→</span>
+        </a>
+        <a href="mailto:sjongkhae@gmail.com" class="contact-link">
+          <span class="cl-label">Email</span>
+          <span class="cl-value">sjongkhae@gmail.com</span>
+          <span class="cl-arrow">→</span>
+        </a>
+        <a href="https://line.me/ti/p/BZVkHBMvzx" target="_blank" class="contact-link">
+          <span class="cl-label">LINE</span>
+          <span class="cl-value">tiger_lj</span>
+          <span class="cl-arrow">↗</span>
+        </a>
+        <a href="#" class="contact-link">
+          <span class="cl-label">Availability</span>
+          <span class="cl-value">Immediate start · Full-time</span>
+          <span class="cl-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-cta-box reveal reveal-d2">
+      <div class="cta-tag">Ready to Hire</div>
+      <div class="cta-title">Why I'm the right choice for your team</div>
+      <div class="cta-sub">I bring agency-level thinking, hands-on execution, and the accountability of someone who has managed real budgets and delivered real results for real businesses.</div>
+      <a href="https://drive.google.com/drive/folders/15IqWS7jSLzDS-BiAgMmwQsKxipJwgJX4?usp=sharing" target="_blank" class="btn-black">View My Resume →</a>
+      <div class="cta-items">
+        <div class="cta-item">3+ years managing 300K–500K THB/month in ad spend</div>
+        <div class="cta-item">Experience in clinics, schools, real estate, beauty, e-commerce</div>
+        <div class="cta-item">Full technical stack: Pixel, CAPI, GTM, GA4, UTM</div>
+        <div class="cta-item">Strategic thinker + hands-on executor</div>
+        <div class="cta-item">Data-driven decisions with clear reporting</div>
+        <div class="cta-item">Available for immediate start</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="foot-name">Suriyawong Jongkhae (Tiger)</div>
+  <div class="foot-copy">Performance Ads Specialist · Chiang Mai, Thailand · 2025</div>
+</footer>
+
+<script>
+// ─── SCROLL REVEAL ───
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // Animate skill bars
+      const bar = e.target.querySelector('.skill-bar-fill');
+      if (bar) {
+        setTimeout(() => {
+          bar.style.width = bar.dataset.width + '%';
+        }, 100);
+      }
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Animate all skill bars on scroll
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.width = e.target.dataset.width + '%';
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.skill-bar-fill').forEach(el => barObserver.observe(el));
+
+// ─── SMOOTH SCROLL ───
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href === '#') return;
+    e.preventDefault();
+    const t = document.querySelector(href);
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// ─── NAV SCROLL EFFECT ───
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) {
+    nav.style.borderBottomColor = 'rgba(0,0,0,0.12)';
+  } else {
+    nav.style.borderBottomColor = 'transparent';
+  }
+});
+</script>
+</body>
+</html>
